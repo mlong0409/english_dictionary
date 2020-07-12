@@ -8,6 +8,10 @@ def translate(word):
     word = word.lower()
     if word in data:
         return data[word]
+    elif word.capitalize() in data:
+        return data[word.capitalize()]
+    elif word.upper() in data:
+        return data[word.upper()]
     else:
         closest = get_close_matches(word, data.keys())
         if closest:
